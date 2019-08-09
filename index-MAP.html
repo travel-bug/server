@@ -1,0 +1,81 @@
+<!-- https://developer.mapquest.com/documentation/mapquest-js/v1.3/examples/geocoding-with-custom-popups/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>THE BUG</title>
+</head>
+
+<body>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Get my location</button>
+    <p id="demo"></p>
+    <div id="map" style="width: 100%; height: 530px;"></div>
+
+
+
+    <script type="text/javascript">
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+
+        window.onload = function () {
+
+            L.mapquest.key = 'tHqerESjw0XU2phtefVXVGzPS1O9vFPr';
+
+            L.mapquest.geocoding().geocode('Chicago, IL', createMap);
+
+            function createMap(error, response) {
+                var location = response.results[0].locations[0];
+                var latLng = location.displayLatLng;
+                var map = L.mapquest.map('map', {
+                    center: latLng,
+                    layers: L.mapquest.tileLayer('map'),
+                    zoom: 14
+                });
+
+                var customPopup = L.popup({ closeButton: false })
+                    .setLatLng(latLng)
+                    .setContent('<strong>' + location.adminArea5 + ', ' + location.adminArea3 + '</strong> is located here.')
+                    .openOn(map);
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body style="border: 0; margin: 0;"> -->

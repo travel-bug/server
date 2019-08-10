@@ -1,5 +1,11 @@
+var LocalStrategy = require('passport-local').Strategy;
 
 module.exports = function (app, passport) {
+
+
+    app.get('/api/test', function (req, res) {
+        res.json('test.js')
+    });
 
     app.get('/profile', isLoggedIn, function (req, res) {
         res.json('profile.ejs', {
@@ -28,7 +34,7 @@ module.exports = function (app, passport) {
     });
 
     //posting a picture
-    app.post()
+
 
     //post button
 

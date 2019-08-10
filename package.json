@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/travel-bug/server/issues"
   },
-  "homepage": "https://github.com/travel-bug/server#readme"
+  "homepage": "https://github.com/travel-bug/server#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
 }

@@ -1,5 +1,4 @@
 const express = require("./node_modules/express");
-
 const mongoose = require("mongoose");
 const passport = require("passport");
 const app = express();

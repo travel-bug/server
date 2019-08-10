@@ -22,6 +22,14 @@ module.exports = function (app, passport) {
         res.json('login.ejs', { message: req.flash('loginMessage') });
     });
 
+    app.post(url, (req, res)=>{
+        let email = req.body.email
+        let password = req.body.password
+        let username = req.body.username
+        let firstName = req.body.firstName
+        let lastName = req.body.username
+     });
+
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/profile', // redirect to the secure profile section

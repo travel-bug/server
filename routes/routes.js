@@ -1,9 +1,10 @@
+var LocalStrategy = require('passport-local').Strategy;
 
 module.exports = function (app, passport) {
 
 
     app.get('/api/test', function (req, res) {
-res.json('test.js')
+        res.json('test.js')
     });
 
     app.get('/profile', isLoggedIn, function (req, res) {

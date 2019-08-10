@@ -22,14 +22,8 @@ module.exports = function (app, passport) {
 
 app.post(url, (req, res)=>{
     let password = req.body.password
-});
-app.post (url, (req, res)=>{
     let username = req.body.username
-});
-app.post (url, (req, res)=>{
     let firstName = req.body.firstName
-});
-app.post (url, (req, res)=>{
     let lastName = req.body.username
 });
 

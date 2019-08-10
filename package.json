@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/travel-bug/server/issues"
   },
-  "homepage": "https://github.com/travel-bug/server#readme"
+  "homepage": "https://github.com/travel-bug/server#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

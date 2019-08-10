@@ -1,6 +1,11 @@
 
 module.exports = function (app, passport) {
 
+
+    app.get('/api/test', function (req, res) {
+res.json('test.js')
+    });
+
     app.get('/profile', isLoggedIn, function (req, res) {
         res.json('profile.ejs', {
             user: req.user

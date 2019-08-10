@@ -16,6 +16,22 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 
+    app.post(url, (req, res)=>{
+    let email = req.body.email 
+});
+
+app.post(url, (req, res)=>{
+    let password = req.body.password
+});
+app.post (url, (req, res)=>{
+    let username = req.body.username
+});
+app.post (url, (req, res)=>{
+    let firstName = req.body.firstName
+});
+app.post (url, (req, res)=>{
+    let lastName = req.body.username
+});
 
     app.get('/login', function (req, res) {
         res.render('login.ejs', { message: req.flash('loginMessage') });

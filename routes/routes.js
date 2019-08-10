@@ -28,7 +28,7 @@ module.exports = function (app, passport) {
     });
 
     //posting a picture
-    app.post()
+    
 
     //post button
 

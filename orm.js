@@ -15,12 +15,14 @@ let orm = {
             console.log(statement.sql);
         }
     },
+    
     _buildWhereStatement: function(query, queryString, searchCriteria){
         queryString += " WHERE ";
         let whereString = [];
         for (let where in query.where) {
             searchCriteria.push(query.where[where]);
             whereString.push(' ? ');
+    
         }
         let operator = query.operator || 'AND';
         queryString += whereString.join(operator);
@@ -57,10 +59,8 @@ let orm = {
         connection.query(queryString, queryArray, function(error, result) {
             callback(error, result);
         });
-    },
-
     }
-  
-};
+    };
 
-module.exports = orm;
+
+module.exports = orm

@@ -26,11 +26,15 @@ ON DELETE CASCADE ON UPDATE CASCADE
 CREATE TABLE place (
 place_id INTEGER AUTO_INCREMENT,
 place_name varchar (256),
+location_id varchar (256),
 gps_id varchar (256),
 lat_long float (53),
 PRIMARY KEY (place_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
+SET @lat = 41.8781;
+SET @lng =87.6298;
+ 
 CREATE TABLE post
 (
 post_id INTEGER AUTO_INCREMENT,

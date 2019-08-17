@@ -1,4 +1,4 @@
-const doStuff = require('../models/do');
+const doStuff = require('../models/doStuff');
 
 module.exports = function (app) {
     app.get('api/doStuff/top_posts', (req, res) => {

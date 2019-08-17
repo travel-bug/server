@@ -15,11 +15,22 @@ let user = {
             data: userObj
         };
         orm.insert(query, callback);
+    },
+
+    loginUser: function (user, callback) {
+        var userObj = {
+
+        }
+        userObj.username = user.username;
+        userObj.person_password = user.password;
+        let query = {
+            table: 'people',
+            data: userObj
+        };
+        orm.select(query, callback);
     }
-
-
-
-    // loginUser: function (request, response) {
+    // loginUser: function (user, callback) {
+    // }
     //     orm.select({
     //         table: 'people',
     //         column: 'username',

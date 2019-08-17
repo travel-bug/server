@@ -1,7 +1,7 @@
-const doStuff = require('../models/do');
+const doStuff = require('../models/doStuff');
 
 module.exports = function (app) {
-    app.get('api/eat/top_posts', (req, res) => {
+    app.get('api/doStuff/top_posts', (req, res) => {
         doStuff.selectTopPostsDo(function (err, result) {
             if (err) {
                 console.log(err);

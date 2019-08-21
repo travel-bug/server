@@ -25,8 +25,23 @@ app.post(url, (req, res)=>{
     let username = req.body.username
     let firstName = req.body.firstName
     let lastName = req.body.username
-});
 
+});
+app.post ('/login', function (req, res, next){
+    passport.authenticate('local-login'),
+    {
+        successRedirect: '/profile',
+        failureRedirect: '/login',
+        failureFlash : true,
+}
+});
+app.post('/login', function (req, res, next) { 
+    passport.authenticate('local-login'),
+    {
+      successRedirect: '/profile',
+      failureRedirect: '/login',
+      failureFlash: true,
+    },
     app.get('/login', function (req, res) {
         res.render('login.ejs', { message: req.flash('loginMessage') });
     });
@@ -54,11 +69,11 @@ app.post(url, (req, res)=>{
 
 
 
-};
+});
 
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
+    if (req.isAuthenticated());
         return next();
 
     res.redirect('/');

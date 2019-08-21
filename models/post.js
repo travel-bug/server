@@ -1,7 +1,7 @@
 const orm = require('../orm');
 
 let post = {
-  selectTopPostsSee: function(callback) {
+  selectTopPosts: function(callback) {
     let query = {
       table: 'post',
       data: {},

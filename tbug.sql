@@ -9,7 +9,7 @@ username varchar(256),
 person_email VARCHAR(20) NOT NULL UNIQUE,
 person_password VARCHAR(256) NOT NULL,
 first_name VARCHAR(256),
-last_name VARCHAR(256)
+last_name VARCHAR(256),
 PRIMARY KEY (person_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 

@@ -2,7 +2,17 @@ const post = require('../models/post');
 const pics = require('../models/pics');
 const place = require('../models/place');
 
-module.exports = function(app) {
+module.exports = function (app) {
+
+  app.get('/api/eat/top_posts', (req, res) => {
+    eat.selectTopPosts(function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.status(200).json(result);
+      }
+    });
+  });
   app.post('/api/new_post', (req, res) => {
     console.log('new post hit');
     let postParams = {

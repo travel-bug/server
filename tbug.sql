@@ -5,7 +5,7 @@ USE tbug;
 CREATE TABLE people
 (
 person_id INTEGER AUTO_INCREMENT,
-username varchar(20) UNIQUE,
+username varchar(20) NOT NULL UNIQUE,
 person_email VARCHAR(256) NOT NULL UNIQUE,
 person_password VARCHAR(256) NOT NULL,
 first_name VARCHAR(256),

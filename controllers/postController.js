@@ -50,4 +50,25 @@ module.exports = function(app) {
       }
     });
   });
+
+  app.post('/api/new_prof_pic', (req, res) => {
+    let picParams = {
+      person_id: req.body.user_id,
+      pics_url: req.body.image_url,
+      pic_type: 'prof'
+    };
+    pics.updateProfPic(picParams, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        pics.setNewProfPic(picParams, (err, newResult) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.status(200).json(newResult);
+          }
+        });
+      }
+    });
+  });
 }

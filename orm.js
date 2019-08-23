@@ -53,8 +53,12 @@ let orm = {
         }
     },
     update: function(query, callback) {
-        let queryString = "UPDATE ?? SET ? WHERE ?";
-        let statement = connection.query(queryString, [query.table, query.data, query.where[0]], function(error, result) {
+        let queryString = "UPDATE ?? SET ?";
+        let updateCriteria = [query.table, query.data];
+        if (query.where){
+            queryString = orm._buildWhereStatement(query, queryString, updateCriteria);
+        }
+        let statement = connection.query(queryString, updateCriteria, function(error, result) {
             callback(error, result);
         });
         if (query.debug){

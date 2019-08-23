@@ -38,14 +38,10 @@ let post = {
         };
         orm.select(query, callback);
     },
-    insertNewPost = function (callback) {
+    insertNewPost: function (post, callback) {
         let query = {
             table: 'post',
-            data: {},
-            columns: ['post.category', 'post.user_id', 'post.location_id', 'post.post_id'
-
-            ]
-
+            data: post
         };
         orm.insert(query, callback);
     }

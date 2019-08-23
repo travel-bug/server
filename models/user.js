@@ -18,14 +18,13 @@ let user = {
     },
 
     loginUser: function (user, callback) {
-        var userObj = {
-
-        }
-        userObj.username = user.username;
-        userObj.person_password = user.password;
         let query = {
             table: 'people',
-            data: userObj
+            where: [
+                { 'people.username': user.username },
+                { 'people.person_password': user.password }
+            ],
+            debug: true
         };
         orm.select(query, callback);
     }

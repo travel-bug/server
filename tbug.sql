@@ -18,7 +18,7 @@ CREATE TABLE pics
 person_id INT (11),
 pics_id INTEGER AUTO_INCREMENT,
 pics_url varchar(256),
-pic_type enum ("prof","post"),
+pic_type enum ("prof","post","old_prof"),
 PRIMARY KEY (pics_id),
 FOREIGN KEY (person_id) REFERENCES people (person_id)
 ON DELETE CASCADE ON UPDATE CASCADE

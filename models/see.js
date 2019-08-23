@@ -5,7 +5,7 @@ let see = {
     let query = {
       table: 'post',
       data: {},
-      columns: ['post.post_id', 'post.user_id', 'post.location_id', 'post.pics_id', 'post.category', 'people.username', 'pics.pics_url', 'place.place_name'],
+      columns: ['post.post_id', 'post.user_id', 'post.location_id', 'post.pics_id', 'post.category', 'post.content', 'people.username', 'pics.pics_url', 'place.place_name'],
       join: [
         {
           table: 'people',
@@ -36,7 +36,7 @@ let see = {
         }
       ],
       where: [
-        { 'post.category': 'eat' }
+        { 'post.category': 'see' }
       ]
     };
     orm.select(query, callback);

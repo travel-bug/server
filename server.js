@@ -18,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 require("./routes/routes")(app, passport);
 require('./controllers/eatController')(app);
+require('./controllers/seeController')(app);
+require('./controllers/doController')(app);
 require('./controllers/postController')(app);
 
 // Start the API server

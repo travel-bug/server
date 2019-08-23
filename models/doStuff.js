@@ -21,7 +21,7 @@ let doStuff = {
                     condition: [
                         {
                             left: 'post.pics_id',
-                            right: 'post.pics_id'
+                            right: 'pics.pics_id'
                         }
                     ]
                 },

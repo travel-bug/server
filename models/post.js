@@ -5,7 +5,7 @@ let post = {
         let query = {
             table: 'post',
             data: {},
-            columns: ['post.post_id', 'post.user_id', 'post.location_id', 'post.pics_id', 'post.category', 'people.username', 'pics.pics_url', 'place.place_name'],
+            columns: ['post.post_id', 'post.user_id', 'post.location_id', 'post.pics_id', 'post.category', 'people.username', 'pics.pics_url', 'place.place_name', 'post.content'],
             join: [
                 {
                     table: 'people',

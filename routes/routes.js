@@ -9,9 +9,8 @@ module.exports = function (app, passport) {
       
      });
 
-     app.post('/api/signin', passport.authenticate("local-login"), (req, res)=>{
-    
-        console.log(req.user)
+     app.post('/api/signin', passport.authenticate("local-login", { session: false }), (req, res)=>{
+         console.log(req.user);
         res.json(req.user);
       
      });

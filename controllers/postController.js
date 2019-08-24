@@ -4,7 +4,7 @@ const place = require('../models/place');
 
 module.exports = function (app) {
 
-  app.get('/api/eat/top_posts', (req, res) => {
+  app.get('/api/top_posts', (req, res) => {
     eat.selectTopPosts(function (err, result) {
       if (err) {
         console.log(err);

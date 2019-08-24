@@ -55,7 +55,7 @@ passport.use('local-login', new LocalStrategy({
         user.loginUser(userObj, function (err, result) {
             console.log(result);
             // userObj.id = result.insertId;
-            return done(null, userObj);
+            return done(null, result);
         });
     }));
 
